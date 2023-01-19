@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
-use App\Models\Personnel;
+use App\Models\personnel;
 
 class personnelController extends Controller
 {
@@ -48,7 +48,7 @@ class personnelController extends Controller
         $personnels->phone_number = $request->input("phone_number");
         if ($request->hasfile("images")) {
             $file = $request->file("images");
-            $filename = $file->getClientOriginalName();
+             $filename = uniqid() . "_" . $file->getClientOriginalName();
             $file->move("uploads/personnels/", $filename);
             $personnels->images = $filename;
         }
@@ -103,7 +103,7 @@ class personnelController extends Controller
                 File::delete($destination);
             }
             $file = $request->file("images");
-            $filename = $file->getClientOriginalName();
+             $filename = uniqid() . "_" . $file->getClientOriginalName();
             $file->move("uploads/personnels/", $filename);
             $personnels->images = $filename;
         }

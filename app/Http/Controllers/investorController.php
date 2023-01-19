@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
-use App\Models\Investor;
+use App\Models\investor;
 
 class investorController extends Controller
 {
@@ -48,7 +48,7 @@ class investorController extends Controller
         $investors->phone_number = $request->input("phone_number");
         if ($request->hasfile("images")) {
             $file = $request->file("images");
-            $filename = $file->getClientOriginalName();
+             $filename = uniqid() . "_" . $file->getClientOriginalName();
             $file->move("uploads/investors/", $filename);
             $investors->images = $filename;
         }
@@ -103,7 +103,7 @@ class investorController extends Controller
                 File::delete($destination);
             }
             $file = $request->file("images");
-            $filename = $file->getClientOriginalName();
+             $filename = uniqid() . "_" . $file->getClientOriginalName();
             $file->move("uploads/investors/", $filename);
             $investors->images = $filename;
         }

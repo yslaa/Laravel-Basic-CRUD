@@ -20,6 +20,15 @@ Route::get('/', function () {
 Route::get('test', 'testController@test');
 Route::resource("/customer", "customerController");
 Route::resource("/investor", "investorController");
+Route::resource("/animal", "animalController");
+Route::get("/animal/restore/{id}", [
+    "uses" => "animalController@restore",
+    "as" => "animal.restore",
+]);
+Route::get("/animal/forceDelete/{id}", [
+    "uses" => "animalController@forceDelete",
+    "as" => "animal.forceDelete",
+]);
 
 Route::get('/personnel', 'personnelController@index');
 Route::get('/personnel/create', 'personnelController@create')->name('personnels.create'); //option 1 best for me
