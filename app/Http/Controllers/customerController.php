@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB;
+use Redirect;
+use File;
+use View;
+use DB;
 use App\Models\Customer;
 
 class customerController extends Controller
