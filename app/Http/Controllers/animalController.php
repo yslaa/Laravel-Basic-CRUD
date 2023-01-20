@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
 use App\Models\animal;
 use App\Models\customer;
-use App\Events\SendAnimal;
-use Event;
 
 class animalController extends Controller
 {
@@ -87,7 +85,6 @@ class animalController extends Controller
             $animals->images = $filename;
         }
         $animals->save();
-        Event::dispatch(new SendAnimal($animals)); 
         return Redirect::to("animal")->with('success',
             "New Animal Added!"
         );

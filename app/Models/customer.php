@@ -20,5 +20,5 @@ class customer extends Model
 
     protected $guarded = ["id"];
 
-    protected $fillable = ["first_name", "last_name", "phone_number", "images"];
+    protected $fillable = ["first_name", "last_name", "email","phone_number", "images"];
 }

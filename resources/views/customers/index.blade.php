@@ -13,6 +13,7 @@
                 <th class="w-screen text-3xl">Id</th>
                 <th class="w-screen text-3xl">First Name</th>
                 <th class="w-screen text-3xl">Last Name</th>
+                <th class="w-screen text-3xl">Email</th>
                 <th class="w-screen text-3xl">Phone Number</th>
                 <th class="w-screen text-3xl">Customer Pic</th>
                 <th class="w-screen text-3xl">Update</th>
@@ -29,6 +30,9 @@
                     </td>
                     <td class=" text-center text-3xl">
                         {{ $customer->last_name }}
+                    </td>
+                    <td class=" text-center text-3xl">
+                        {{ $customer->email }}
                     </td>
                     <td class=" text-center text-3xl">
                         {{ $customer->phone_number }}

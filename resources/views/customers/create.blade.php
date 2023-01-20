@@ -32,6 +32,15 @@
                         </div>
 
                         <div>
+                            <label for="email" class="text-lg">Email</label>
+                            <input type="text" class="block shadow-5xl p-2 my-5 w-full" name="email"
+                                placeholder="Email" value="{{ old('email') }}">
+                            @if ($errors->has('email'))
+                                <p class="text-center text-red-500">{{ $errors->first('email') }}</p>
+                            @endif
+                        </div>
+
+                        <div>
                             <label for="phone_number" class="text-lg">Phone Number</label>
                             <input type="text" class="block shadow-5xl p-2 my-5 w-full" name="phone_number"
                                 placeholder="phone_number" value="{{ old('phone_number') }}">

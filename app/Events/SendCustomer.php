@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class SendAnimal
+class SendCustomer
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -19,9 +19,9 @@ class SendAnimal
      *
      * @return void
      */
-    public function __construct( $animals )
+    public function __construct( $customers )
     {
-        $this->animals = $animals;
+        $this->customers = $customers;
     }
 
     /**

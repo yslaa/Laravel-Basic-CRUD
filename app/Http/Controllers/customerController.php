@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
 use App\Models\customer;
+// use App\Events\SendCustomer;
+// use Event;
 
 class customerController extends Controller
 {
@@ -42,17 +44,19 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        $Customers = new Customer();
-        $Customers->first_name = $request->input("first_name");
-        $Customers->last_name = $request->input("last_name");
-        $Customers->phone_number = $request->input("phone_number");
+        $customers = new Customer();
+        $customers->first_name = $request->input("first_name");
+        $customers->last_name = $request->input("last_name");
+        $customers->email = $request->input("email");
+        $customers->phone_number = $request->input("phone_number");
         if ($request->hasfile("images")) {
             $file = $request->file("images");
              $filename = uniqid() . "_" . $file->getClientOriginalName();
             $file->move("uploads/customers/", $filename);
-            $Customers->images = $filename;
+            $customers->images = $filename;
         }
-        $Customers->save();
+        $customers->save();
+        // Event::dispatch(new SendCustomer($customers)); 
         return Redirect::to("customer");
     }
 
@@ -96,6 +100,7 @@ class customerController extends Controller
         $customers = Customer::find($id);
         $customers->first_name = $request->input("first_name");
         $customers->last_name = $request->input("last_name");
+        $customers->email = $request->input("email");
         $customers->phone_number = $request->input("phone_number");
         if ($request->hasfile("images")) {
             $destination = "uploads/customers/" . $customers->images;

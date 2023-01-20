@@ -19,14 +19,15 @@ class CustomerFactory extends Factory
         return [
             "first_name" => $this->faker->name,
             "last_name" => $this->faker->name,
+            "email" => $this->faker->unique()->safeEmail(),
             "phone_number" => $this->faker->numerify("###-###-####"),
-            "images" => $this->faker->image(
-                "public/uploads/customers",
-                640,
-                480,
-                null,
-                false
-            ),
+            // "images" => $this->faker->image(
+            //     "public/uploads/customers",
+            //     640,
+            //     480,
+            //     null,
+            //     false
+            // ),
         ];
     }
 }
