@@ -26,13 +26,13 @@ class AnimalSeeder extends Seeder
                 'animal_type' => $faker->randomElement(['Dog', 'Cat', 'Bird', 'Rabbit', 'Hamster', 'Hedgehog']),
                 'age' => $faker->numberBetween($min = 1, $max = 100),
                 'gender' => $faker->randomElement(['Male', 'Female']),
-                "images" => $faker->image(
-                    "public/uploads/animals",
-                    640,
-                    480,
-                    null,
-                    false
-                ),
+                // "images" => $faker->image(
+                //     "public/uploads/animals",
+                //     640,
+                //     480,
+                //     null,
+                //     false
+                // ),
             ]);
         }
     }
