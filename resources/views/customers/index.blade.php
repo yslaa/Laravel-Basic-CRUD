@@ -7,9 +7,9 @@
         </a>
     </div>
 
-    <div class="py-3">
+    <div class="py-3 text-white">
         <table class="table-auto">
-            <tr class="text-white">
+            <tr class="text-center">
                 <th class="w-screen text-3xl">Id</th>
                 <th class="w-screen text-3xl">First Name</th>
                 <th class="w-screen text-3xl">Last Name</th>
@@ -37,20 +37,20 @@
                     <td class=" text-center text-3xl">
                         {{ $customer->phone_number }}
                     </td>
-                    <td class="pl-24">
+                    <td class="pl-12">
                         <img src="{{ asset('uploads/customers/' . $customer->images) }}" alt="I am A Pic" width="75"
                             height="75">
                     </td>
-                    <td class=" text-center">
-                        <a href="customer/{{ $customer->id }}/edit" class="text-center text-3xl bg-green-600 p-2">
+                    <td class="text-center">
+                        <a href="customer/{{ $customer->id }}/edit" class="text-center text-xl bg-green-600 p-2">
                             Update &rarr;
                         </a>
                     </td>
-                    <td class=" text-center">
+                    <td class="text-center">
                         <form action="/customer/{{ $customer->id }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="text-center text-3xl bg-red-600 p-2">
+                            <button type="submit" class="text-center text-xl bg-red-600 p-2">
                                 Delete &rarr;
                             </button>
                         </form>

@@ -15,9 +15,9 @@
         </a>
     </div>
 
-    <div class="py-3">
+    <div class="py-3 text-white">
         <table class="table-auto">
-            <tr class="text-white text-center">
+            <tr class="text-center">
                 <th class="w-screen text-3xl">Animal Id</th>
                 <th class="w-screen text-3xl">Animal Name</th>
                 <th class="w-screen text-3xl">Animal Type</th>
@@ -43,28 +43,28 @@
                         </td>
                     @endif
 
-                    <td class=" text-center text-3xl">
+                    <td class="text-center text-3xl">
                         {{ $animal->animal_name }}
                     </td>
-                    <td class=" text-center text-3xl">
+                    <td class="text-center text-3xl">
                         {{ $animal->animal_type }}
                     </td>
-                    <td class=" text-center text-3xl">
+                    <td class="text-center text-3xl">
                         {{ $animal->age }}
                     </td>
-                    <td class=" text-center text-3xl">
+                    <td class="text-center text-3xl">
                         {{ $animal->gender }}
                     </td>
-                    <td class=" text-center text-3xl">
+                    <td class="text-center text-3xl">
                         {{ $animal->first_name }}
                     </td>
-                    <td class="pl-10">
+                    <td class="pl-6">
                         <img src="{{ asset('uploads/animals/' . $animal->images) }}" alt="I am A Pic" width="75"
                             height="75">
                     </td>
 
                     @if ($animal->deleted_at)
-                        <td class=" text-center">
+                        <td class="text-center">
                             <a href="#">
                                 <p class="text-center text-2xl bg-green-600 p-2">
                                     Update
@@ -107,7 +107,7 @@
 
                     <td>
                         <a href="{{ route('animal.forceDelete', $animal->id) }}">
-                            <p class="text-center text-lg bg-warning p-2 mx-3"
+                            <p class="text-center text-lg bg-sky-500 p-2 mx-3"
                                 onclick="return confirm('Do you want to delete this data permanently?')">
                                 Destroy &rarr;
                             </p>
