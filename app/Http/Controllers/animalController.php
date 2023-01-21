@@ -29,7 +29,7 @@ class animalController extends Controller
                 "customers.first_name",
                 "animals.id",
                 "animals.animal_name",
-                "animals.animal_name",
+                "animals.animal_type",
                 "animals.age",
                 "animals.gender",
                 "animals.images",
