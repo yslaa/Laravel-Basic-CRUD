@@ -209,8 +209,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Form' => Collective\Html\FormFacde::class,
-        'Html' => Collective\Html\HtmlFacde::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ])->toArray(),
 
 ];

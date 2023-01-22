@@ -10,7 +10,7 @@
         @forelse ($animals as $animal)
             <section class="flex flex-wrap justify-center gap-3 p-12 w-full">
                 <div
-                    class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm bg-white rounded-lg border border-white-200 shadow-md dark:bg-white-800 dark:border-white-700">
                     <img src="{{ asset('uploads/animals/' . $animal->images) }}" alt="I am A Pic" width="400"
                         style="max-height: 12rem;">
                     <div class="p-3">
@@ -19,11 +19,13 @@
                         ID<p class="mb-2 text-lg font-bold">{{ $animal->id }}</p>
                         Age<p class="mb-2 text-lg font-bold">{{ $animal->age }}</p>
                         Gender<p class="mb-2 text-lg font-bold">{{ $animal->gender }}</p>
-                        Type<p class="mb-2 text-lg font-bold">{{ $animal->animatype }}</p>
+                        Type<p class="mb-2 text-lg font-bold">{{ $animal->animal_type }}</p>
                         Owner<p class="mb-2 text-lg font-bold">{{ $animal->first_name }}</p>
                     </div>
                 </div>
             </section>
+            <a href="{{ url()->previous() }}" class="bg-gray-800 text-white font-bold p-2 mt-5 text-center"
+                            role="button">Back</a>
         @empty
             <p>No Animal Data in the Database</p>
         @endforelse

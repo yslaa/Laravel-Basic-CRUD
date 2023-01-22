@@ -18,8 +18,7 @@
                     <div>
                         <label for="animal_name" class="text-lg">Animal Name</label>
                         {{ Form::text('animal_name', null, [
-                            'class' => 'block shadow-5xl p-2 my-2
-                                                                    w-full',
+                            'class' => 'block shadow-5xl p-2 my-2 w-full',
                             'id' => 'animal_name',
                         ]) }}
                         @if ($errors->has('animal_name'))
@@ -78,7 +77,7 @@
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 w-full">
-                        {{ Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block']) }}
+                        {{ Form::submit('Submit', ['class' => 'btn bg-green-500 p-2 mt-5 btn-lg btn-block']) }}
                         <a href="{{ url()->previous() }}" class="bg-gray-800 text-white font-bold p-2 mt-5 text-center"
                             role="button">Cancel</a>
                     </div>

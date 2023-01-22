@@ -38,7 +38,7 @@
                             <a href="#">{{ $animal->id }}</a>
                         </td>
                     @else
-                        <td class="text-center text-3xl">
+                        <td class="text-center text-3xl text-green-500">
                             <a href="{{ route('animal.show', $animal->id) }}">{{ $animal->id }}</a>
                         </td>
                     @endif
@@ -65,7 +65,7 @@
 
                     @if ($animal->deleted_at)
                         <td>
-                            <a href="#" class="text-center text-lg bg-black p-2">
+                            <a href="#" class="text-center text-lg bg-red-600 p-2">
                                 Update &rarr;
                             </a>
                         </td>
@@ -79,7 +79,7 @@
 
                     <td class=" text-center">
                         {!! Form::open(['route' => ['animal.destroy', $animal->id], 'method' => 'DELETE']) !!}
-                        <button type="submit" class="text-center text-lg bg-red-600 p-2">
+                        <button type="submit" class="text-center text-lg bg-yellow-600 p-2">
                             Delete &rarr;
                         </button>
                         {!! Form::close() !!}

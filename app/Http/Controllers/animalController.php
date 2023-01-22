@@ -37,7 +37,7 @@ class animalController extends Controller
                 "animals.deleted_at"
             )
             ->orderBy("animals.id", "DESC")
-            ->withTrashed()
+            ->withTrashed() //onlyTrashed withTrashed withoutTrashed
             ->get();
 
         return view("animals.index", ["animals" => $animals]);
@@ -108,7 +108,7 @@ class animalController extends Controller
                 "customers.first_name",
                 "animals.id",
                 "animals.animal_name",
-                "animals.animal_name",
+                "animals.animal_type",
                 "animals.age",
                 "animals.gender",
                 "animals.images",
