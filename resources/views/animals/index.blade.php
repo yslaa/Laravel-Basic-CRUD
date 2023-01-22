@@ -4,7 +4,7 @@
     <div class="container">
         <br />
         @if (Session::has('success'))
-            <div class="alert alert-success">
+            <div class="text-center text-white text-3xl text-bold">
                 <p>{{ Session::get('success') }}</p>
             </div><br />
         @endif
@@ -34,7 +34,7 @@
             @forelse ($animals as $animal)
                 <tr>
                     @if ($animal->deleted_at)
-                        <td class="text-center text-3xl">
+                        <td class="text-center text-3xl text-red-500">
                             <a href="#">{{ $animal->id }}</a>
                         </td>
                     @else
@@ -64,16 +64,14 @@
                     </td>
 
                     @if ($animal->deleted_at)
-                        <td class="text-center">
-                            <a href="#">
-                                <p class="text-center text-2xl bg-green-600 p-2">
-                                    Update
-                                </p>
+                        <td>
+                            <a href="#" class="text-center text-lg bg-black p-2">
+                                Update &rarr;
                             </a>
                         </td>
                     @else
                         <td>
-                            <a href="animal/{{ $animal->id }}/edit" class="text-center text-2xl bg-green-600 p-2">
+                            <a href="animal/{{ $animal->id }}/edit" class="text-center text-lg bg-green-600 p-2">
                                 Update &rarr;
                             </a>
                         </td>
@@ -91,7 +89,7 @@
                         <td>
                             <a href="{{ route('animal.restore', $animal->id) }}">
                                 <p class="text-center text-red-700 text-lg bg-purple-500 p-2 mx-3">
-                                    Restore
+                                    Restore &rarr;
                                 </p>
                             </a>
                         </td>
